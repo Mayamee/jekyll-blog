@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
 			v.vmx["displayname"] = "ruby-machine"
 		end
 		vm_01.vm.network "private_network", ip: "10.100.1.100"
+		# vm_01.vm.network "forwarded_port", guest: 4000, host: 8080, host_ip: "10.100.1.1", protocol: "tcp"
 		# vm_01.disksize.size = "20GB"
 		vm_01.vm.synced_folder ".", "/vagrant"
 		vm_01.vm.hostname = "ruby-machine"
